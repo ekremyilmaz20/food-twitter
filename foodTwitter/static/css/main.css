@@ -1,7 +1,92 @@
+/* General Styles */
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f0f0f0;
-    color: red;
-    line-height: 3.0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Recipe List Styles */
+.recipe-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
+  border: 1px solid #ddd;
+}
+
+.recipe-list li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.recipe-ingredients,
+.recipe-instructions {
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-instructions p {
+  margin-top: 10px;
+}
+
+/* Content Styles (assuming it's for a form) */
+.content {
+  margin: 20px auto;
+  width: 60%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-recipe-form input,
+.add-recipe-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.add-recipe-form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Navigation Styles */
+nav li a {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav li a:hover {
+  background-color: #eee;
 }

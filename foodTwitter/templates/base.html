@@ -10,11 +10,21 @@
 </head>
 <body>
     <header>
-        {% block navbar %}
-          <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-        {% endblock %}
+        <nav>
+            <ul>  <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+            </ul>
+        </nav>
     </header>
 
-    {% block body %}{% endblock %}
+    <main>  {% block body %}{% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+          <p>&copy; Best Authentic Recipes 2024</p>
+        {% endblock %}
+    </footer>
+
 </body>
 </html>
