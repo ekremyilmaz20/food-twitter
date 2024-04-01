@@ -1,25 +1,27 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: sans-serif;
   background-color: #f0f0f0;
-  color: #333; /* Change text color to a darker shade */
-  line-height: 1.5; /* Adjust line height for better readability */
+  color: #333;
+  line-height: 1.5;
 }
 
+/* Recipe List Styles */
 .recipe-list {
   list-style: none;
   padding: 0;
-  margin: 20px auto; /* Center the list horizontally */
-  width: 80%; /* Set a maximum width for the list */
-  border: 1px solid #ddd; /* Add a subtle border */
+  margin: 20px auto;
+  width: 80%;
+  border: 1px solid #ddd;
 }
 
 .recipe-list li {
   margin-bottom: 20px;
   padding: 15px;
-  background-color: #fff; /* Set a white background for each recipe */
-  border-radius: 5px; /* Add rounded corners */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
@@ -27,7 +29,8 @@ h3 {
   margin-bottom: 10px;
 }
 
-.recipe-ingredients, .recipe-instructions {
+.recipe-ingredients,
+.recipe-instructions {
   padding: 0;
   margin: 0;
 }
@@ -36,6 +39,7 @@ h3 {
   margin-top: 10px;
 }
 
+/* Content Styles (assuming it's for a form) */
 .content {
   margin: 20px auto;
   width: 60%;
@@ -44,11 +48,6 @@ h3 {
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 15px;
 }
 
 .form-group {
@@ -78,33 +77,16 @@ label {
   margin-top: 10px;
 }
 
+/* Navigation Styles */
 nav li a {
   display: inline-block;
   padding: 10px 15px;
   border: 1px solid #ddd;
   border-radius: 3px;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
   color: #333;
 }
 
 nav li a:hover {
-  background-color: #eee;
-}
-
-.navigation {
-  text-align: center;  /* Center the navigation links horizontally */
-  margin-bottom: 20px; /* Add some space below the navigation */
-}
-
-.navigation a {
-  display: inline-block;
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  text-decoration: none; /* Remove underline */
-  color: #333;
-}
-
-.navigation a:hover {
   background-color: #eee;
 }
