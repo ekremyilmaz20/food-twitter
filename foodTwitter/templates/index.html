@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <h1> Best Recipes Home Page </h1>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h2>Add a New Recipe</h2>
+    <form method="POST" action="{{ url_for('create_recipe') }}" class="add-recipe-form" enctype="application/x-www-form-urlencoded">
+        <div class="form-group">
+            <label for="recipe_name">Recipe Name:</label>
+            <input type="text" id="recipe_name" name="recipe_name" required>
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients (comma separated):</label>
+            <textarea id="ingredients" name="ingredients" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="cooking_time">Cooking Time (minutes):</label>
+            <input type="number" id="cooking_time" name="cooking_time" required>
+        </div>
+        <button type="submit">Save Recipe</button>
+    </form>
+</div>
+{% endblock %}

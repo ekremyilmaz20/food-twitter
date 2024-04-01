@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block head %}
+  <h1>All Recipes</h1>
+{% endblock %}
+
+{% block body %}
+  <ul>
+    {% for recipe in recipes %}
+      <li>
+        <h3>{{ recipe['recipe_name'] }}</h3>
+        <p>{{ recipe['cooking_time'] }} minutes</p>
+        </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
