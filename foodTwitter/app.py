@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -65,7 +65,7 @@ def index():
 
 @app.route('/recipes', methods=['POST'])
 def create_recipe():
-    data = request.form  # Access form data using request.form
+    data = request.form
     # Validate data (implement your validation logic here)
     new_recipe = Recipe(
         recipe_name=data['recipe_name'],
@@ -75,19 +75,21 @@ def create_recipe():
     )
     db.session.add(new_recipe)
     db.session.commit()
-    return jsonify(new_recipe.serialize())
+
+    # Redirect to the 'get_recipes' route for all recipes
+    return redirect(url_for('get_recipes'))
 
 
 @app.route('/recipes', methods=['GET'])
 def get_all_recipes():
-    recipes = Recipe.query.all()
+    recipes = Recipe.query.order_by(Recipe.created_at.desc()).all()  # Order by descending creation date
     recipe_data = [recipe.serialize() for recipe in recipes]
     return jsonify(recipe_data)
 
 
 @app.route('/all_recipes')
 def get_recipes():
-    recipes = Recipe.query.all()
+    recipes = Recipe.query.order_by(Recipe.created_at.desc()).all()  # Order by descending creation date
     recipe_data = [recipe.serialize() for recipe in recipes]
     return render_template('all_recipes.html', recipes=recipe_data)
 
