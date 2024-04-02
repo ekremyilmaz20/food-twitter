@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
     {% block head %}{% endblock %}
 </head>
 <body>
     <header>
+        <!-- Avatar Container -->
+        <div id="avatar-container">
+            <!-- Avatar Icon -->
+            <i id="avatar" class="fas fa-user-circle fa-4x"></i>
+            <!-- Text -->
+            <p class="avatar-text">Sam</p>
+        </div>
+
         <nav>
-            <ul>  <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+            <ul>
+                <li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>  {% block body %}{% endblock %}
+    <main>
+        {% block body %}{% endblock %}
     </main>
 
     <footer>
@@ -25,6 +36,5 @@
           <p>&copy; Best Authentic Recipes 2024</p>
         {% endblock %}
     </footer>
-
 </body>
 </html>
