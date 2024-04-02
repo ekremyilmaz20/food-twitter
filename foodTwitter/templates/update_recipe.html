@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Best Recipes - Update Recipe</title>
+    <h1>Update Recipe</h1>
+{% endblock %}
+
+{% block body %}
+{% if recipe %}  <form method="POST">
+  <h2>{{ recipe['recipe_name'] }}</h2>
+  <div class="form-group">
+    <label for="recipe_name">Recipe Name:</label>
+    <input type="text" name="recipe_name" id="recipe_name" value="{{ recipe['recipe_name'] }}">
+  </div>
+  <div class="form-group">
+    <label for="ingredients">Ingredients (comma separated):</label>
+    <textarea name="ingredients" id="ingredients">{{ recipe['ingredients'] }}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="instructions">Instructions:</label>
+    <textarea name="instructions" id="instructions">{{ recipe['instructions'] }}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="cooking_time">Cooking Time (minutes):</label>
+    <input type="number" name="cooking_time" id="cooking_time" value="{{ recipe['cooking_time'] }}">
+  </div>
+  <button type="submit">Update Recipe</button>
+</form>
+{% else %}
+  <p>Recipe not found!</p>
+{% endif %}
+
+{% endblock %}
