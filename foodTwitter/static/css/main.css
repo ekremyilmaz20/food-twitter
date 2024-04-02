@@ -39,6 +39,34 @@ h3 {
   margin-top: 10px;
 }
 
+/* Button Styles */
+.button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Update Recipe Button */
+.update-button {
+  margin-right: 10px; /* Add some spacing between buttons */
+}
+
+/* Delete Button */
+.delete-button {
+  background-color: #cc0000; /* Change color to red for emphasis */
+}
+
+.delete-button:hover {
+  background-color: #ff3333; /* Lighten red on hover */
+}
+
 /* Content Styles (assuming it's for a form) */
 .content {
   margin: 20px auto;
@@ -89,4 +117,50 @@ nav li a {
 
 nav li a:hover {
   background-color: #eee;
+}
+
+/* Update Recipe Form Styles */
+.update-recipe-form {
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.update-recipe-form h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.update-recipe-form .form-group {
+  margin-bottom: 20px;
+}
+
+.update-recipe-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.update-recipe-form input[type="text"],
+.update-recipe-form textarea,
+.update-recipe-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.update-recipe-form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.update-recipe-form button[type="submit"]:hover {
+  background-color: #555;
 }
