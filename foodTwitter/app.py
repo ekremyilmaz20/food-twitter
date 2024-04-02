@@ -76,7 +76,6 @@ def create_recipe():
     db.session.add(new_recipe)
     db.session.commit()
 
-    # Redirect to the 'get_recipes' route for all recipes
     return redirect(url_for('get_recipes'))
 
 
@@ -92,6 +91,40 @@ def get_recipes():
     recipes = Recipe.query.order_by(Recipe.created_at.desc()).all()  # Order by descending creation date
     recipe_data = [recipe.serialize() for recipe in recipes]
     return render_template('all_recipes.html', recipes=recipe_data)
+
+
+@app.route('/recipes/<int:recipe_id>', methods=['GET', 'POST'])
+def update_recipe(recipe_id):
+    if request.method == 'GET':
+        recipe = Recipe.query.get(recipe_id)
+        if not recipe:
+            return jsonify({'error': 'Recipe not found'}), 404
+        return render_template('update_recipe.html', recipe=recipe.serialize())  # Pass recipe data
+    elif request.method == 'POST':
+        data = request.form
+        recipe = Recipe.query.get(recipe_id)
+        if not recipe:
+            return jsonify({'error': 'Recipe not found'}), 404
+        recipe.recipe_name = data['recipe_name']
+        recipe.ingredients = data['ingredients']
+        recipe.instructions = data['instructions']
+        recipe.cooking_time = data['cooking_time']
+        db.session.commit()
+
+        return redirect(url_for('get_recipes'))
+
+
+@app.route('/recipes/<int:recipe_id>/delete', methods=['POST'])
+def delete_recipe(recipe_id):
+    recipe = Recipe.query.get(recipe_id)
+    if not recipe:
+        return jsonify({'error': 'Recipe not found'}), 404
+
+    Ingredient.query.filter_by(recipe_id=recipe_id).delete()
+
+    db.session.delete(recipe)
+    db.session.commit()
+    return redirect(url_for('get_recipes'))
 
 
 if __name__ == "__main__":
